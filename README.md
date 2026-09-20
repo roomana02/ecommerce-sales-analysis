@@ -22,3 +22,36 @@ Source: Kaggle - E-Commerce Sales Performance Analysis
 ### Stage 1: Excel
 Organized and formatted the raw dataset's columns before importing 
 into MySQL for deeper analysis.
+
+### Stage 2: MySQL / SQL
+
+Imported the dataset into MySQL and fixed data quality issues found 
+during import:
+- `order_date` was imported as text and converted to a proper DATE 
+  column using `STR_TO_DATE()`.
+- `revenue` contained currency symbols ($) and thousands-separator 
+  commas, cleaned with `REPLACE()` before converting to DOUBLE.
+- A hidden encoding artifact (BOM character) on `order_id` was 
+  removed with `ALTER TABLE ... CHANGE`.
+
+Wrote SQL queries covering aggregation, GROUP BY, sorting/limiting, 
+date functions, a subquery, and a CASE statement.
+
+**Key Findings:**
+- Total revenue: **$5,109,761** across 5,000 orders (AOV: $1,021.95).
+- **Electronics drives the most total revenue** ($1,829,885 from 1,777 
+  orders), well ahead of Clothing, Home, and Beauty.
+- Revenue is **evenly spread across regions** (West leads at $1.35M, 
+  but all four regions are within ~8% of each other) — region isn't 
+  a performance lever here, category is.
+- **Card payments generate the most revenue** ($2,366,243) and the 
+  highest average order value of the three payment methods.
+- **6 of the top 10 highest-value single orders are Electronics or 
+  Beauty**, reinforcing that these categories drive the biggest 
+  individual sales, not just the highest volume.
+- Comparing each category's average order value to the overall 
+  average (via a subquery + CASE label) revealed a twist: **Beauty 
+  has the highest average order value** ($1,059.29 vs $1,021.95 
+  overall) despite having the *lowest* total revenue — it 
+  underperforms on customer reach, not on what each customer spends.
+  
