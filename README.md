@@ -68,6 +68,15 @@ date functions, a subquery, and a CASE statement.
   has the highest average order value** ($1,059.29 vs $1,021.95 
   overall) despite having the *lowest* total revenue — it 
   underperforms on customer reach, not on what each customer spends.
+
+  ![SQL KPI Summary as Total Revenue calculated](sql_01_KPI_summary.png)
+  ![SQL revenue by each product category](sql_02_revenue_by_product_category.png)
+  ![SQL revenue by region calculated](sql_03_revenue_by_region.png)
+  ![SQL revenue by different payment methods](sql_04_revenue_by_payment_method.png)
+  ![SQL Top 10 highest orders](sql_05_top_10_orders.png)
+  ![SQL Revenue trend by monthly basis](sql_06_monthly_revenue_trend.png)
+  ![SQL subquery comparing category average to overall average](sql_07_subquery_avg_comparison.png)
+  ![SQL Case Statement shwoing the above and below average order value of products](sql_08_case_statement.png)
   
 ### Stage 3: Power BI
 
@@ -81,6 +90,7 @@ interactive dashboard with 3 KPI cards, 4 charts, and a Year slicer.
 - Revenue by Payment Method (donut chart)
 - Monthly Revenue Trend (line chart), filterable by Year
 
+
 **Additional Insight (Power BI-specific):**
 - Filtering the dashboard to 2022 specifically reveals that **May 2022 
   had a sharp revenue spike** (~$41.6K vs a ~$28-30K baseline in 
@@ -93,3 +103,5 @@ interactive dashboard with 3 KPI cards, 4 charts, and a Year slicer.
 
 See `Sales_Performance_Dashboard.pbix` and `dashboard_2022_view.png` 
 in this repo.
+![Sales performance of Ecommerce project](Sales_performance_dashboard.pbix)
+
