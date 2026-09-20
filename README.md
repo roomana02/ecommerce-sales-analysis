@@ -1,6 +1,20 @@
 # ecommerce-sales-analysis
 Sales performance analysis using Excel, MySQL, Power BI
 
+## Key Insights
+- Electronics drives the most revenue ($1.83M) of any category, 
+  ahead of Clothing, Home, and Beauty.
+- Beauty has the highest average order value ($1,059) despite the 
+  lowest total revenue — it underperforms on customer reach, not 
+  spend per order.
+- Card payments generate the most revenue ($2.37M, 46% of total) and 
+  the highest average order value of the three payment methods.
+- Revenue is fairly evenly spread across regions overall (West leads 
+  narrowly), but this shifts year to year — North led specifically 
+  in 2022.
+- May 2022 saw a sharp, unexplained revenue spike worth further 
+  investigation.
+
 ## Problem Statement
 Which product categories, regions, and payment methods drive the most 
 revenue for this e-commerce business, and how does performance trend 
@@ -55,3 +69,27 @@ date functions, a subquery, and a CASE statement.
   overall) despite having the *lowest* total revenue — it 
   underperforms on customer reach, not on what each customer spends.
   
+### Stage 3: Power BI
+
+Connected Power BI Desktop directly to the MySQL database and built an 
+interactive dashboard with 3 KPI cards, 4 charts, and a Year slicer.
+
+**Visuals included:**
+- KPI cards: Total Revenue, Total Orders, Average Order Value
+- Revenue by Product Category (bar chart)
+- Revenue by Region (bar chart)
+- Revenue by Payment Method (donut chart)
+- Monthly Revenue Trend (line chart), filterable by Year
+
+**Additional Insight (Power BI-specific):**
+- Filtering the dashboard to 2022 specifically reveals that **May 2022 
+  had a sharp revenue spike** (~$41.6K vs a ~$28-30K baseline in 
+  surrounding months) — a pattern not obvious when scrolling through 
+  raw SQL results across all 165 months at once.
+- Regional performance is **not stable year-over-year**: North led 
+  revenue in 2022 specifically, while West leads when looking at the 
+  full multi-year dataset — a reminder that top-line totals can hide 
+  which segment is actually driving results in any given period.
+
+See `Sales_Performance_Dashboard.pbix` and `dashboard_2022_view.png` 
+in this repo.
