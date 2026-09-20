@@ -103,5 +103,6 @@ interactive dashboard with 3 KPI cards, 4 charts, and a Year slicer.
 
 See `Sales_Performance_Dashboard.pbix` and `dashboard_2022_view.png` 
 in this repo.
-![Sales performance of Ecommerce project](Sales_performance_dashboard.pbix)
+![Sales performance of Ecommerce project](Sales_performance_dashboard.pbix.pbix)
+![Ecommerce Sales Performance Project Dashboard](Ecommerce_Sales_Performance_Dashboard.png)
 
